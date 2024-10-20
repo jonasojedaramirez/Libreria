@@ -11,6 +11,10 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
+  {
+    path: 'my-libros',
+    loadChildren: () => import('./my-libros/my-libros.module').then( m => m.MyLibrosPageModule)
+  },
 ];
 
 @NgModule({

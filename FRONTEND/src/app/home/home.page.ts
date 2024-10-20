@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-home',
@@ -7,6 +8,14 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
-  constructor() {}
+  titulo: string = "El Señor de los Anillos";
+  autor: string = "J.R.R.Tolkien";
+
+  constructor(private router: Router) {}
+
+  gotoMyLibros(){
+    this.router.navigateByUrl("/my-libros");
+  }
+  
 
 }

@@ -54,15 +54,73 @@ exports.findAll = (req, res) => {
 
 //encuentra un libro con la id
 exports.findOne = (req, res) => {
+    const id = req.params.id;
+
+    Libro.findByPk(id)
+        .then(data => {
+            if (data) {
+                res.send(data);
+            } else {
+                res.status(404).send({
+                    message: 'No se puede encontrar Libro con id=${id}'
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error encontrando Libro con id=" + id
+            });
+        });
 
 };
 
 //actualiza un libro con la respuesta a id
 exports.update = (req, res) => {
+    const id = req.params.id;
+
+    Libro.update(req.body, {
+        where: { id: id }
+    })
+        .then(num => {
+            if (num == 1) {
+                res.send({
+                    message: " Libro ha sido actualizado exitosamente."
+                });
+            } else {
+                res.send({
+                    message: 'No se puede actualizar Libro con id=${id}. Podria ser que no existe'
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: "Error actualizando Libro con id=" + id
+            });
+        });
 
 };
 
 //borra un libro con el especifico id
 exports.delete = (req, res) => {
+    const id = req.params.id;
+    Libro.destroy({
+        where: { id: id }
+    })
+        .then(num =>  {
+            if (num == 1) {
+                res.send({
+                    message: " Libro ha sido borrado exitosamente!"
+                });
+            } else {
+                res.send({
+                    message: ' No se puede borrar Libro con id=${id}. Libro no encontrado '
+                });
+            }
+        })
+        .catch(err => {
+            res.status(500).send({
+                message: " No se ha podido borrar Libro con id=" + id
+            });
+        });
 
 };

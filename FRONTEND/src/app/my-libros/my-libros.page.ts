@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibroService } from '../services/libro.service';
 
 
 @Component({
@@ -8,21 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyLibrosPage implements OnInit {
 
-  libros: any = [
-    {
-      id: 1,
-      titulo: "El Señor de los Anillos",
-      autor: "J.R.R.Tolkien"
-    },{
-      id: 2,
-      titulo: "La Isla del Tesoro",
-      autor: "Robert Stevenson"
-    }
-  ]
+  libros: any = [];
 
-  constructor() { }
+    
 
-  ngOnInit() {
+  constructor(private libroService: LibroService) { }
+
+  ngOnInit(){
+    this.getAllLibros();
+  }
+
+  getAllLibros(){
+    this.libroService.getLibros().subscribe(response => {
+      this.libros = response;
+    });
   }
 
 }

@@ -1,6 +1,13 @@
 const express = require("express");
+const cors = require("cors");
 
 const app = express();
+
+var corsOptions = {
+    origin: "http://localhost:8100"
+};
+
+app.use(cors(corsOptions));
 
 // parse request
 app.use(express.json());
@@ -13,7 +20,7 @@ const db = require("./models");
 //db.sequelize.sync();
 
 //in development
-db.Sequelize.sync({ force: true }).then (() =>{
+db.Sequelize.sync({  }).then (() =>{ // quitamos el force: true, para que no borre las tablas
     console.log("Drop and re-sync db.");
 });
 

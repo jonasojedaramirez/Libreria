@@ -1,0 +1,2 @@
+no consigo que funciona buscar por id, y eliminar por id
+

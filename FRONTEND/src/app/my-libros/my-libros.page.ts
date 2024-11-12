@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { LibroService } from '../services/libro.service';
 
 
@@ -13,16 +14,18 @@ export class MyLibrosPage implements OnInit {
 
     
 
-  constructor(private libroService: LibroService) { }
+  constructor(
+  private libroService: LibroService
+    ) { }
 
   ngOnInit(){
-    this.getAllLibros();
+     this.getAllLibros();
   }
 
-  getAllLibros(){
-    this.libroService.getLibros().subscribe(response => {
-      this.libros = response;
-    });
-  }
+   getAllLibros(){
+     this.libroService.getLibros().subscribe(response => {
+       this.libros = response;
+     });
+   }
 
 }

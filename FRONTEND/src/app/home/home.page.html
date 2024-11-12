@@ -1,7 +1,7 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Libreria
     </ion-title>
   </ion-toolbar>
 </ion-header>
@@ -9,13 +9,22 @@
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
+      <ion-title size="large">Libreria</ion-title>
     </ion-toolbar>
   </ion-header>
 
-  <div>
+  <!-- <div>
     <h1 class="titulo">Titulo: {{titulo}}</h1>
     <p>Autor: {{autor}}</p>
-  </div>
-  <ion-button expand="block" (click)="gotoMyLibros()">Muestra libros</ion-button>
+  </div> -->
+  
+  <ion-list>
+    <ion-item>
+      <ion-input label="Input Title Book" placeholder="Introduce title"></ion-input>
+      <ion-input label="Input Autor" placeholder="Introduce autor"></ion-input>
+    </ion-item>
+  </ion-list>
+    
+  <ion-button shade="round" (click)="gotoMyLibros()">Muestra libros</ion-button>
+  <ion-button shade="round" (click)="gotoAddBook()">Añadir libro</ion-button>
 </ion-content>

@@ -9,11 +9,18 @@
     <ion-toolbar>
       <ion-title size="large">addLibro</ion-title>
     </ion-toolbar>
-   
-
-     
   </ion-header>
-  <ion-button routerLink="/home" shape="round">Add Book </ion-button>
-  <ion-button routerLink="/home" shape="round">Menu </ion-button>
-</ion-content>
 
+  <form [formGroup]="bookForm" (ngSubmit)="createLibro()">
+    <ion-item>
+      <ion-label position="floating">titulo</ion-label>
+      <ion-input formControlName="titulo" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">autor</ion-label>
+      <ion-input formControlName="autor" type="text"></ion-input>
+    </ion-item>
+    <ion-button expand="full" type="submit" [disabled]="!bookForm.valid">Crear </ion-button>
+  </form>
+
+</ion-content>

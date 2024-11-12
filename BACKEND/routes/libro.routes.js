@@ -21,4 +21,4 @@ module.exports = app => {
     app.use('/api/libros', router );
 
 
-;}
+};

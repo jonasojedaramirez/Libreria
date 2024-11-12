@@ -12,20 +12,28 @@ export class MyLibrosPage implements OnInit {
 
   libros: any = [];
 
-    
-
   constructor(
   private libroService: LibroService
     ) { }
 
   ngOnInit(){
-     this.getAllLibros();
+     
+  }
+
+  ionViewDidEnter(){
+    this.getAllLibros();
   }
 
    getAllLibros(){
      this.libroService.getLibros().subscribe(response => {
        this.libros = response;
      });
+   }
+
+   deleteLibro(id: any){
+    this.libroService.delete(id).subscribe(response =>{
+      this.getAllLibros();
+    })
    }
 
 }

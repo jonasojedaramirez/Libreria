@@ -20,13 +20,21 @@ export class AddLibroPage implements OnInit {
     })
   }
 
-  ngOnInit() {
-    this.addAllLibros();    
-  }
-  
-  addAllLibros(){
-    this.libroService.addAllLibros
+  ngOnInit() { }
+
+  createLibro() {
+    if (this.bookForm.valid) {
+      console.log('Formulario válido: ', this.bookForm.value);
+      this.libroService.create(this.bookForm.value).subscribe(response => {
+        this.route.navigateByUrl("/my-libros");
+      })
+
+    } else {
+      console.log('Formulario no válido ');
+    }
   }
 
-
+  getFormControl(field: string) {
+    return this.bookForm.get(field);
+  }
 }

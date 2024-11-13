@@ -16,10 +16,16 @@
       <ion-label position="floating">titulo</ion-label>
       <ion-input formControlName="titulo" type="text"></ion-input>
     </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('titulo')?.hasError('required') && getFormControl('titulo')?.touched">
+      El Titulo es obligatorio.
+    </ion-note>
     <ion-item>
       <ion-label position="floating">autor</ion-label>
       <ion-input formControlName="autor" type="text"></ion-input>
     </ion-item>
+    <ion-note color="danger" *ngIf="getFormControl('autor')?.hasError('required') && getFormControl('autor')?.touched">
+      El Autor es obligatorio.
+    </ion-note>
     <ion-button expand="full" type="submit" [disabled]="!bookForm.valid">Crear </ion-button>
   </form>
 

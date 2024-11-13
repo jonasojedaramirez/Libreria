@@ -1,2 +1,2 @@
-1 no consigo que funciona buscar por id, y eliminar por id  - el error era el localhost, debo poner http
-2 no consigo seguir con la parte del los botones
+pte update
+no consigo cargar la imagen, pero si puedo cargar una imagen con enlace

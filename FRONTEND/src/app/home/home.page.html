@@ -1,8 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Libreria
-    </ion-title>
+    <ion-title class="title">Libreria</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -12,10 +10,21 @@
       <ion-title size="large">Libreria</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-img src="https://docs-demo.ionic.io/assets/madison.jpg">
-    alt ="Biblioteca"
+  <ion-img src="../../assets/libros_apilados.jpg">
+     alt ="Biblioteca"
   </ion-img> 
   <hr>
+
   <ion-button shade="round" (click)="gotoMyLibros()">Muestra libros</ion-button>
   <ion-button shade="round" (click)="gotoAddBook()">Añadir libro</ion-button>
+  
+  <hr>
+  <ion-datetime-button datetime="datetime"></ion-datetime-button>
+
+<ion-modal [keepContentsMounted]="true">
+  <ng-template>
+    <ion-datetime id="datetime"></ion-datetime>  <!-- con este consigo que pille la hora de la maquina -->
+  </ng-template>
+</ion-modal>
+
 </ion-content>

@@ -6,21 +6,21 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
+<ion-content class="background-image" no-scroll padding [fullscreen]="true">
   <ion-header collapse="condense">
     <ion-toolbar>
       <ion-title size="large">Libreria</ion-title>
     </ion-toolbar>
   </ion-header>
-  
-    <ion-img src="../../assets/libros_apilados.jpg" class="imagen">
-      alt ="Biblioteca"
-    </ion-img>
-  
+
+  <ion-img src="../../assets/libros_apilados.jpg" class="imagen">
+    alt ="Biblioteca"
+  </ion-img>
+
   <hr>
   <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
-    <ion-button shade="round" (click)="gotoMyLibros()">Muestra libros</ion-button>
-    <ion-button shade="round" (click)="gotoAddBook()">Añadir libro</ion-button>
+    <ion-button shape="round" (click)="gotoMyLibros()">Muestra libros</ion-button>
+    <ion-button shape="round" (click)="gotoAddBook()">Añadir libro</ion-button>
   </div>
   <hr>
   <ion-datetime-button datetime="datetime"></ion-datetime-button>

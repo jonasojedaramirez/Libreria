@@ -1,14 +1,22 @@
 .title {
+  font-size: 50px;
   text-align: center;
-  color:aqua
+  color: aqua
+  
 }
 
 
+.imagen {
 
-  .imagen{
-    
-    max-width: 65%;
-    height: 45%;
-    align-content: center;
-    
-  }
+  max-width: 65%;
+  height: 45%;
+  align-content: center;
+
+}
+
+//no consigo que se vea la imagen de fondo
+.background-image {
+  background-image: url(../../assets/textura1.jpg) no-repeat center center / cover;
+  background-size: cover;
+  height: 100%;
+}

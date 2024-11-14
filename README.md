@@ -64,6 +64,8 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 ## Autores ✒️
 
 _Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+Tiburcio Cruz, por la paciencia que ha tenido.
+videos de Randy Varela, por los estupendos videos de su canal de youtube
 
 La plantilla de este readme, salio de * **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
 

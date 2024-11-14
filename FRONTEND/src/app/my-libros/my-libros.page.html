@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title class="title">My-libros</ion-title>
+    <ion-title class="title">Muestra libros</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -10,15 +10,21 @@
       <ion-title size="large">my-libros</ion-title>
     </ion-toolbar>
   </ion-header>
- 
-  <ion-list>
-    <ion-item *ngFor="let b of libros">
-      <ion-label>
-        <h1>{{b.titulo}}</h1>
-        <p>{{b.autor}}</p>
-        <ion-button (click)="deleteLibro(b.id)" shape="round">Borrar </ion-button>
-      </ion-label>
-    </ion-item>
-  </ion-list>
-  <ion-button routerLink="/home" shape="round">Menu </ion-button>
+  <ion-grid>
+    <ion-row>
+      <ion-col class="ion-text-center">
+        <ion-list style="max-width:600px; margin: auto;">
+          <ion-item *ngFor="let b of libros">
+            <ion-label>
+              <h2>{{b.titulo}}</h2>
+              <p>{{b.autor}}</p>
+              <ion-button (click)="deleteLibro(b.id)" shape="round" aria-label="Borrar libro">Borrar </ion-button>
+            </ion-label>
+          </ion-item>
+        </ion-list>
+
+        <ion-button routerLink="/home" shape="round" aria-label="Ir al menu" style="margin-top: 20px">Menu </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>

@@ -8,15 +8,14 @@ import { Router } from '@angular/router';
 })
 export class HomePage {
 
-  titulo: string = "El Señor de los Anillos";
-  autor: string = "J.R.R.Tolkien";
+  token = localStorage.getItem("token");
 
   constructor(private router: Router) { }
 
-  gotoMyLibros(){
+  gotoMyLibros() {
     this.router.navigateByUrl("/my-libros");
   }
-  gotoAddBook(){
+  gotoAddBook() {
     this.router.navigateByUrl("/add-libro");
   }
 

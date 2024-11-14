@@ -1,6 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title class="title">Libreria</ion-title>
+    <ion-buttons slot="start"></ion-buttons>
+    <ion-menu-button menu="main-menu"></ion-menu-button>
   </ion-toolbar>
 </ion-header>
 
@@ -10,21 +12,22 @@
       <ion-title size="large">Libreria</ion-title>
     </ion-toolbar>
   </ion-header>
-  <ion-img src="../../assets/libros_apilados.jpg">
-     alt ="Biblioteca"
-  </ion-img> 
-  <hr>
-
-  <ion-button shade="round" (click)="gotoMyLibros()">Muestra libros</ion-button>
-  <ion-button shade="round" (click)="gotoAddBook()">Añadir libro</ion-button>
   
+    <ion-img src="../../assets/libros_apilados.jpg" class="imagen">
+      alt ="Biblioteca"
+    </ion-img>
+  
+  <hr>
+  <div style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+    <ion-button shade="round" (click)="gotoMyLibros()">Muestra libros</ion-button>
+    <ion-button shade="round" (click)="gotoAddBook()">Añadir libro</ion-button>
+  </div>
   <hr>
   <ion-datetime-button datetime="datetime"></ion-datetime-button>
 
-<ion-modal [keepContentsMounted]="true">
-  <ng-template>
-    <ion-datetime id="datetime"></ion-datetime>  <!-- con este consigo que pille la hora de la maquina -->
-  </ng-template>
-</ion-modal>
-
+  <ion-modal [keepContentsMounted]="true">
+    <ng-template>
+      <ion-datetime id="datetime"></ion-datetime> <!-- con este consigo que pille la hora de la maquina -->
+    </ng-template>
+  </ion-modal>
 </ion-content>

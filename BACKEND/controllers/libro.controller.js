@@ -8,15 +8,15 @@ exports.create = (req, res) => {
     if(!req.body.autor){
         res.status(400).send({
             message: "contenido no puede estar vacio!"
-
-            
+  
         });
     }
     // crea un Libro
     const libro = {
         titulo: req.body.titulo,
-        autor: req.body.autor
-    };
+        autor: req.body.autor,
+        filename: req.file ? req.file.filename : ""
+    }
 
     // salva Libro en la base de datos
     Libro.create(libro)

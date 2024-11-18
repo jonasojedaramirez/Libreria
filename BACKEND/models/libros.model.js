@@ -7,6 +7,9 @@ module.exports = (sequelize, Sequelize) => {
         },
         autor: {
             type: Sequelize.STRING
+        },
+        filename: {
+            type: Sequelize.STRING
         }
     });    
     return Libro;

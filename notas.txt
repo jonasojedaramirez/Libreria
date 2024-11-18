@@ -1,2 +1,4 @@
 pte update
 no consigo cargar la imagen, pero si puedo cargar una imagen con enlace  --- llevandolo a la carpeta assents lo soluciono
+
+los ficheros de imagen, me los genera sin extension

@@ -15,6 +15,9 @@
       <ion-col class="ion-text-center">
         <ion-list style="max-width:600px; margin: auto;">
           <ion-item *ngFor="let b of libros">
+            <ion-avatar>
+              <img *ngIf="b.filename" src="http://localhost:8080/images/{{b.filename}}" alt="image/">
+            </ion-avatar>
             <ion-label>
               <h2>{{b.titulo}}</h2>
               <p>{{b.autor}}</p>
@@ -28,3 +31,8 @@
     </ion-row>
   </ion-grid>
 </ion-content>
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-button routerLink="/add-libro">
+    <ion-icon name="add-outline"></ion-icon>
+  </ion-button>
+</ion-fab>

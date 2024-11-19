@@ -1,19 +1,25 @@
 var multer = require('multer');
 var storage = multer.diskStorage({
-    destination: (req, fil, cb) => {
+    destination: (req, file, cb) => {
         cb(null, './public/images');
     },
-    filename: (req, fil, cb) => {
+    filename: (req, file, cb) => {
         var filetype = '';
-        if(filetype.mimetype === 'image/gif') {
+        
+        if(file.mimetype === 'image/gif') {
             filetype = 'gif';
+            
         }
-        if(filetype.mimetype === 'image/png') {
+        if(file.mimetype === 'image/png') {
             filetype = 'png';
+            
+            
         }
-        if(filetype.mimetype === 'image/jpeg') {
+        if(file.mimetype === 'image/jpeg') {
             filetype = 'jpg';
+            
         }
+        
         cb(null, 'image-' + Date.now() + '.' + filetype);
     }
 });

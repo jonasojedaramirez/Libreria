@@ -39,5 +39,6 @@ require("./routes/libro.routes")(app);
 //set port, listen for requests
 const PORT = process.env.PORT || 8080;
 app.listen(PORT, () => {
-    console.log(`Servidor esta corriendo en el puerto ${PORT}.`)
+    console.log(`Servidor esta corriendo en el puerto ${PORT}.`);
+    console.log('********************************************');
 });

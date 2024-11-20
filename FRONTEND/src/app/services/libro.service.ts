@@ -10,7 +10,7 @@ export class LibroService {
 
   constructor(private httpClient: HttpClient) { }
 
-  create(libro: any) {
+  create(libro: any, blob: any) {
     const headers = new HttpHeaders({
       'Content-Type': 'application/x-www-form-urlencoded'
     });

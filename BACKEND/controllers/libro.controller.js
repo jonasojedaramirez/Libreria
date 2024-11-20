@@ -62,7 +62,7 @@ exports.findOne = (req, res) => {
                 res.send(data);
             } else {
                 res.status(404).send({
-                    message: 'No se puede encontrar Libro con id=${id}'
+                    message: `No se puede encontrar Libro con id=${id}`
                 });
             }
         })
@@ -88,7 +88,7 @@ exports.update = (req, res) => {
                 });
             } else {
                 res.send({
-                    message: 'No se puede actualizar Libro con id=${id}. Podria ser que no existe'
+                    message: `No se puede actualizar Libro con id=${id}. Podria ser que no existe`
                 });
             }
         })
@@ -113,7 +113,7 @@ exports.delete = (req, res) => {
                 });
             } else {
                 res.send({
-                    message: ' No se puede borrar Libro con id=${id}. Libro no encontrado '
+                    message: `No se puede borrar Libro con id=${id}. Libro no encontrado `
                 });
             }
         })
